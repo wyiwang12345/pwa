@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youke PWA demo</title>
+  <!-- <link rel="stylesheet" type="text/css" href="styles/inline.css"> -->
+
+  <!-- TODO add manifest here -->
+  <link rel="manifest" href="/manifest.json">
+  <!-- Add to home screen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Weather PWA">
+  <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+  <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#2F3BA2">
+</head>
+<body>
+
+
+  <input id="rmbAmount" type="number" max = "1000000" wdith = "20"> 元 = <input id="dollarAmount" type="number" name="lname"> 美金
+
+<br>
+<br>
+<br>
+<hr>
+<table style="width:100%">
+
+<th>
+<a href="https://www.google.com/maps/search/?api=1&query=餐馆&hl=zh">
+<div class="img-with-text" >
+    <img src="https://www.gstatic.com/images/icons/material/system/2x/restaurant_googblue_24dp.png"/>
+    <p>餐馆</p>
+</div>
+</a>
+</th>
+
+<th>
+<a href="https://www.google.com/maps/search/?api=1&query=酒吧&hl=zh">
+<div class="img-with-text">
+    <img src="https://www.gstatic.com/images/icons/material/system/2x/local_bar_googblue_24dp.png"/>
+    <p>酒吧</p> 
+</div>
+</th>
+
+<th>
+<a href="https://www.google.com/maps/search/?api=1&query=旅店&hl=zh">
+<div class="img-with-text">
+    <img src="https://www.gstatic.com/images/icons/material/system/2x/local_hotel_googblue_24dp.png" />
+    <p>旅店</p>
+
+</div>
+</th>
+
+<th>
+<a href="https://www.google.com/maps/search/?api=1">
+<div class="img-with-text">
+    <img src="https://www.gstatic.com/images/icons/material/system/2x/more_googblue_24dp.png" />
+    <p>更多</p>
+</div>
+</th>
+
+<script>
+  document.getElementById('rmbAmount').addEventListener('change', function() {
+	document.getElementById('dollarAmount').value = (document.getElementById('rmbAmount').value /6.8).toFixed(2);
+	console.log("changing dollar amount;");
+  });
+
+  document.getElementById('dollarAmount').addEventListener('change', function() {
+          document.getElementById('rmbAmount').value = (document.getElementById('dollarAmount').value * 6.8).toFixed(2);
+          console.log("changing rmb amount;");
+  });
+
+</script>
